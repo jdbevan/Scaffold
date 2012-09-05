@@ -1,4 +1,8 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set("display_errors", true);
+
 // Clever way of avoiding lots of includes
 function __autoload($class_name) {
 	// Remember that include doesn't just look
@@ -13,7 +17,7 @@ $employees = $db->selectRows("SELECT * FROM employees ORDER BY name ASC");
 
 foreach ($employees as $employee) {
 	$employeesPage->addContent(
-		"<p>" . $employee['name'] . " is our " . $employee['job'] . ".</p>";
+		"<p>" . $employee['name'] . " is our " . $employee['job'] . ".</p>"
 	);
 }
 
