@@ -2,7 +2,7 @@
 class Page {
 	// Public
 	// Any class can access
-	$title = "";
+	public $title = "";
 	
 	// Protected
 	// Inherited and parent classes have access
@@ -32,9 +32,9 @@ class Page {
 	}
 	
 	function render() {
-		echo $doctype, "\n";
-		renderHeaders();
-		renderBody();
+		echo $this->doctype, "\n";
+		$this->renderHeaders();
+		$this->renderBody();
 	}
 	
 	// Methods that don't need to be accessible from outside
