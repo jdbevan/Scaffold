@@ -9,13 +9,13 @@ class Database {
 	function Database($host, $name, $user, $password) {
 		$this->conx = new mysqli($host, $user, $password, $name);
 		// Throw exception or...
-		if ($mysqli->connect_error) {
-			error_reporting("Database connection error: " . $mysqli->connect_error);
+		if ($this->conx->connect_error) {
+			error_reporting("Database connection error: " . $this->conx->connect_error);
 		}
 	}
 	
 	function select($query) {
-		$result = $conx->query($query);
+		$result = $this->conx->query($query);
 		if ($result !== false) {
 			if ($result->num_rows > 0) {
 				return $result->fetch_assoc();
@@ -31,7 +31,7 @@ class Database {
 	
 	function selectRows($query) {
 		$resultSet = array();
-		$result = $conx->query($query);
+		$result = $this->conx->query($query);
 		if ($result !== false) {
 			if ($result->num_rows > 0) {
 				while ($row = ($result->fetch_assoc())) {
