@@ -48,7 +48,11 @@ class Page {
 		echo "</head>\n";
 	}
 	
-	private function renderBody() {
+	// Must be protected so that PageWithFooter can 'overwrite' it
+	// if it's private then PageWithFooter won't have a renderBody function
+	// and when PageWithFooter::render() is called, it'll call this function
+	// anyway, (unless the render function has been 'overwritten'...)
+	protected function renderBody() {
 		echo "<body>\n";
 		foreach($this->contents as $content) {
 			echo "\t", $content, "\n";
