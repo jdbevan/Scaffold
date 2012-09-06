@@ -1,6 +1,6 @@
 <?php
 
-class Database {
+class MySQL {
 	
 	// This class and any other classes that
 	// inherit this one will have a $conx variable
