@@ -1,11 +1,11 @@
 <?php
 
-abstract class Database {
+interface Database {
 
-	abstract public function __construct($host, $name, $user, $password);
+	public function __construct($host, $name, $user, $password);
 
-	abstract public function select($query);
-	abstract public function selectRows($query);
+	public function select($query);
+	public function selectRows($query);
 	
 }
 ?>
