@@ -11,13 +11,13 @@ function __autoload($class_name) {
 }
 
 // Try replacing Page with PageWithFooter
-$employeesPage = new Page("Employees");
+$page = new Page("Employees");
 
 $db = new MySQL('localhost', 'test', 'user', 'password');
 $employees = $db->selectRows("SELECT * FROM employees ORDER BY name ASC");
 
 foreach ($employees as $employee) {
-	$employeesPage->addContent(
+	$page->addContent(
 		"<p>" . $employee['name'] . " is our " . $employee['job'] . ".</p>"
 	);
 }
@@ -29,8 +29,8 @@ foreach ($employees as $employee) {
  * foreach ($employees as $e) {
  *     $list->add($e['name'] . " is our " . $e['job']);
  * }
- * $employeesPage->addContent( $list->render() );
+ * $page->addContent( $list->render() );
  */
 
-$employeesPage->render();
+$page->render();
 ?>
