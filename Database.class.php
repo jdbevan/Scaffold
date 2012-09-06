@@ -6,7 +6,7 @@ class Database {
 	// inherit this one will have a $conx variable
 	protected $conx;
 	
-	function Database($host, $name, $user, $password) {
+	function __construct($host, $name, $user, $password) {
 		$this->conx = new mysqli($host, $user, $password, $name);
 		// Throw exception or...
 		if ($this->conx->connect_error) {

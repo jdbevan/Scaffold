@@ -15,7 +15,7 @@ class Page {
 
 	// Constructor
 	// At a minimum it needs a title
-	function Page($title) {
+	function __construct($title) {
 		$this->title = $title;
 	}
 	
