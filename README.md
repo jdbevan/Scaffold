@@ -1,1 +1,1 @@
-Very simple Object-Oriented PHP Framework.
+Very simple Object-Oriented PHP 'Framework'.
