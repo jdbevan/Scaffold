@@ -2,11 +2,6 @@
 
 class PageWithFooter extends Page {
 
-//	function render() {
-//		parent::render();
-//		$this->renderFooter();
-//	}
-	
 	protected function renderBody() {
 		echo "<body>\n";
 		foreach ($this->contents as $content) {
