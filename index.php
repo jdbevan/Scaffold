@@ -10,8 +10,7 @@ function __autoload($class_name) {
     include $class_name . ".class.php";
 }
 
-// Try replacing Page with PageWithFooter
-$page = new Page("Employees");
+$page = new PageWithFooter("Employees");
 
 $db = new MySQL('localhost', 'test', 'user', 'password');
 $employees = $db->selectRows("SELECT * FROM employees ORDER BY name ASC");

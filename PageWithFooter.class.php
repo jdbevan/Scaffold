@@ -2,6 +2,7 @@
 
 class PageWithFooter extends Page {
 
+	// Overwrite the behaviour inherited from the Page class
 	protected function renderBody() {
 		echo "<body>\n";
 		foreach ($this->contents as $content) {
